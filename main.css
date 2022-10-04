@@ -1,0 +1,58 @@
+body {
+  background-color: black;
+  height: 900px;
+  text-align: center;
+}
+
+.lantern {
+  margin-top: 5%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sway2d {
+  -webkit-transform-origin: 50% 0%;
+	-webkit-transition: -webkit-transform 1s ease-in-out;
+	-webkit-animation: sway 5s ease-in-out;
+	-moz-animation: sway 5s ease-in-out;
+	-o-animation: sway 5s ease-in-out;
+	animation: sway 5s ease-in-out;
+}
+
+@-webkit-keyframes sway {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	10% {
+		-webkit-transform: rotate(13deg);
+	}
+	20% {
+		-webkit-transform: rotate(-13deg);
+	}
+	30% {
+		-webkit-transform: rotate(9deg);
+	}
+	40% {
+		-webkit-transform: rotate(-9deg);
+	}
+	50% {
+		-webkit-transform: rotate(6deg);
+	}
+	60% {
+		-webkit-transform: rotate(-6deg);
+	}
+	70% {
+		-webkit-transform: rotate(3deg);
+	}
+	80% {
+		-webkit-transform: rotate(-3deg);
+	}
+	90% {
+		-webkit-transform: rotate(2deg);
+	}
+	100%{
+		-webkit-transform: rotate(0deg);
+	}
+}
