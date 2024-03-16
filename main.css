@@ -1,58 +1,88 @@
-body {
-  background-color: black;
-  height: 900px;
-  text-align: center;
-}
-
-.lantern {
-  margin-top: 5%;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.sway2d {
-  -webkit-transform-origin: 50% 0%;
-	-webkit-transition: -webkit-transform 1s ease-in-out;
-	-webkit-animation: sway 5s ease-in-out;
-	-moz-animation: sway 5s ease-in-out;
-	-o-animation: sway 5s ease-in-out;
-	animation: sway 5s ease-in-out;
-}
-
-@-webkit-keyframes sway {
-	0% {
-		-webkit-transform: rotate(0deg);
+.comfortaa-text {
+	color: #f3f7c8;
+	font-size: 6em;
+	font-family: "Comfortaa", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	text-align: center; /* Added property */
+  }
+  
+  body {
+	background-color: black;
+  }
+  
+  .centered-div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
+  @media screen and (max-width: 768px) {
+	.comfortaa-text {
+	  font-size: 10em;
 	}
-	10% {
-		-webkit-transform: rotate(13deg);
-	}
-	20% {
-		-webkit-transform: rotate(-13deg);
-	}
-	30% {
-		-webkit-transform: rotate(9deg);
-	}
-	40% {
-		-webkit-transform: rotate(-9deg);
-	}
-	50% {
-		-webkit-transform: rotate(6deg);
-	}
-	60% {
-		-webkit-transform: rotate(-6deg);
-	}
-	70% {
-		-webkit-transform: rotate(3deg);
-	}
-	80% {
-		-webkit-transform: rotate(-3deg);
-	}
-	90% {
-		-webkit-transform: rotate(2deg);
-	}
-	100%{
-		-webkit-transform: rotate(0deg);
-	}
-}
+  }
+  
+  .hexagon-container {
+	position: relative;
+	margin: 0 auto;
+	z-index: 2;
+  }
+  
+  .image-container {
+	position: absolute;
+	opacity: 0.5;
+	z-index: 1; /* Lower z-index than hexagon-container */
+	top: calc(100% + 10px); /* Position it right below the hexagon-container, adjust the 10px to increase/decrease the gap */
+	left: 50%; /* Center it horizontally */
+	mix-blend-mode: multiply;
+	transform: translateX(-50%); /* Ensure it's centered regardless of its width */
+	/* Rest of your styles */
+  }
+  
+  .hexagon {
+	position: absolute;
+	border-radius: 50%;
+	background-color: black;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+  }
+  
+  .hexagon:nth-child(1) {
+	transform: rotate(30deg) translate(100px) rotate(-30deg);
+  }
+  
+  .hexagon:nth-child(2) {
+	transform: rotate(90deg) translate(100px) rotate(-90deg);
+  }
+  
+  .hexagon:nth-child(3) {
+	transform: rotate(150deg) translate(100px) rotate(-150deg);
+  }
+  
+  .hexagon:nth-child(4) {
+	transform: rotate(210deg) translate(100px) rotate(-210deg);
+  }
+  
+  .hexagon:nth-child(5) {
+	transform: rotate(270deg) translate(100px) rotate(-270deg);
+  }
+  
+  .hexagon:nth-child(6) {
+	transform: rotate(330deg) translate(100px) rotate(-330deg);
+  }
+  
+  .noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+  }
