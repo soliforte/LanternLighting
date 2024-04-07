@@ -1,4 +1,4 @@
-const fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+const fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584];
 let intervalId;
 let line = null;
 let index = fibonacci.length - 1;
@@ -51,11 +51,9 @@ function shiftText() {
             caesarShift(fibonacci[index]);
         }
         createHexagonalLayout(100, 300);
-        index--;
     }
-    if (index >= 0) {
-        intervalId = setInterval(shiftText, 1000 / fibonacci[index]);
-    }
+    index = (index + 1) % fibonacci.length; // Circular index
+    intervalId = setInterval(shiftText, 100);
 }
 
 function getOffset(element) {
